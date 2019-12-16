@@ -13,6 +13,7 @@ public class Unit : MonoBehaviour
     // public List<Waypoint> waypoints;
     public float speed = 4;
     public float range = 4;
+    public int costGold = 100;
     //public float distanceToChase = 2; // as we use mathf we just need single float to decide when to chase player
 
     [Header("Dynamic")]
@@ -23,6 +24,8 @@ public class Unit : MonoBehaviour
     {
         // init animations of death, disable all skills
         Debug.Log("Destroyed!");
+        TreeManager.RemoveUnit(this.gameObject);
+        
         Destroy(this);
     }
     public virtual void Fight()

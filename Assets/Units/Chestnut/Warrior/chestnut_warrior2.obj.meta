@@ -1,0 +1,140 @@
+fileFormatVersion: 2
+guid: e9582a031d087904dacd94f0699b6967
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChestnutBrown
+    second: {fileID: 2100000, guid: c2dab5f5becdc6a4b8303976cddd6e42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChestnutBrown.001
+    second: {fileID: 2100000, guid: 50135da4f3183fb4297e4552ad448aa6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChestnutLight
+    second: {fileID: 2100000, guid: 926778bb21bc7244d9c0e79e16aa4b9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChestnutLight.001
+    second: {fileID: 2100000, guid: 00a4bce810f3d28448cfa367fb836e42, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 1
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips:
+  - 5411d7b3e5b73d54d9e2d67509e4177a
+  - 8d8aa912ac7078d48b24277bedba9cf3
+  - 5e0e4054b9f36d64695e749b596d5e4d
+  - 1598d3e47d2e20c449ed1c75ceee9a45
+  - 985a1aa96cb9c9b4abe8bd99d3d45092
+  - 6593017a3d702504e84b66863b385d13
+  - 98e93611ccbf4a147a3cd7c80f6c780e
+  - aff0cf9507fa43a48b796592423c26a8
+  - 0a57755f0847f474285b7cc733af854b
+  - 81e3715d923f1cd44a89d0ec1fb37c6c
+  - f0d405fe5967c314c82631b096fdd986
+  - bda5a3a1524014c4d8e2bbc7a680948f
+  - db33cb7242022c64bbfbe2db1bc5e5e2
+  - e263e55e893ec314199645a8b985ace3
+  - 4a3a64e09485a8241b7e60e20defc90e
+  - 1e74704bd084a8444a54a1fd616c2779
+  - 5ece4fcdf92f76d488962257193c6062
+  - 607d3bf128a94e34e87b9f6f6eb263c4
+  - 8c05d14525571b54b87e2f19ab2218d1
+  - a26037233535a8e4188e264f619065f7
+  - 6bc4e8c1edb0d6b4aa943ec2c99bc483
+  - 3db42eddc17f14a4e926cb1bb5ebe44f
+  - b119810926c7d454687954a6176018e3
+  - 47da0ba089b78b94ba8a1a5df00cf33b
+  - f1b57c74707e70f41842ff7b446fc485
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
