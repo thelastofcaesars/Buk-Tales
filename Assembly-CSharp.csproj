@@ -62,7 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\TreeManagement\ButtonHandler.cs" />
+    <Compile Include="Assets\Scripts\TreeManagement\HUDSystems.cs" />
     <Compile Include="Assets\Scripts\TreeManagement\TreeManager.cs" />
     <Compile Include="Assets\Scripts\Units\Terrain Units\Warrior.cs" />
     <Compile Include="Assets\Scripts\Units\TerrainUnit.cs" />

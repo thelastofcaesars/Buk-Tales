@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class TreeManager : MonoBehaviour
 {
 
@@ -44,9 +44,9 @@ public class TreeManager : MonoBehaviour
             this.max = max;
             this.actual = actual;
         }
-        public bool IsInMinMaxRange()
+        public bool IsInRange()
         {
-            return min < actual && actual < max ? true : false; 
+            return min <= actual && actual < max ? true : false; 
         }
         public bool IsEqualMin()
         {
@@ -55,7 +55,7 @@ public class TreeManager : MonoBehaviour
     }
 
     [SerializeField]
-    private GameObject testRecruit;
+    public GameObject testRecruit;
     [SerializeField]
     private int gold = 0;
     [SerializeField]
@@ -66,55 +66,120 @@ public class TreeManager : MonoBehaviour
     private int leafs = 0;
     [SerializeField]
     private unitsAlive units = new unitsAlive(1,10,1);
-    [SerializeField]
-    private int maxUnitsAlive = 10;
 
     [SerializeField]
-    public static GameObject flagGO;
-    public static List<GameObject> UNITS;
+    public GameObject flagGO;
+    public List<GameObject> UNITS;
+
+    [SerializeField]
+    private HUDSystems huds;
+
+    private GameObject prefabsParent;
+
+    private void Start()
+    {
+        huds = GameObject.Find("Sources").GetComponent<HUDSystems>();
+        UNITS.Add(GameObject.Find("WoodenStrongold"));
+        if (flagGO == null)
+        {
+            flagGO = new GameObject();
+            flagGO.name = "RecruitPoint";
+            flagGO.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+        }
+    }
 
     public void TestAddGold()
     {
         gold += 100;
+        huds.UpdateGoldText(gold.ToString());
     }
     public void TestAddMinerals()
     {
         minerals += 10;
+        huds.UpdateMineralsText(minerals.ToString());
     }
     public void TestAddBlood()
     {
         blood += 1;
+        huds.UpdateBloodText(blood.ToString());
     }
     public void TestAddLeafs()
     {
         leafs += 10;
+        huds.UpdateLeafsText(leafs.ToString());
     }
 
+    public void InstantiatePrefabsParent()
+    { 
+        prefabsParent = new GameObject();
+        prefabsParent.name = "prefabsParent";
+        prefabsParent.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+    }
+    public void DestroyPrefabsParent()
+    {
+        Destroy(prefabsParent);
+    }
+
+public void CheckArmy()
+    {
+        units.actual = (uint)UNITS.Count;
+        string s = units.actual.ToString() + '/' + units.max.ToString();
+        huds.UpdateUnitsText(s);
+    }
     public void RecruitWarrior()
     {
         int neededSources = testRecruit.GetComponent<Warrior>().costGold;
+        // checksources();
         if (neededSources > gold)
             return;
-        if (!units.IsInMinMaxRange()) // check ( w kolejce mogo byc)
+        if (!units.IsInRange()) // check ( w kolejce mogo byc)
             return;
         if (units.IsEqualMin())
         {
-            GameObject flagGO = new GameObject();
-            //flagGO.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+            InstantiatePrefabsParent();
         }
+        // removesources();
         gold -= neededSources;
-        units.actual++;
-        GameObject ngo = Instantiate(testRecruit, flagGO.transform);
+        huds.UpdateGoldText(gold.ToString());
+        GameObject ngo = Instantiate(testRecruit, flagGO.transform.position, flagGO.transform.rotation, prefabsParent.transform);
+        
         UNITS.Add(ngo);
+        CheckArmy();
+    }
+
+    public void RecruitBowman()
+    {
+        // bowman!
+        
+        int neededSources = testRecruit.GetComponent<Warrior>().costGold;
+        if (neededSources > gold)
+            return;
+        if (!units.IsInRange()) // check ( w kolejce mogo byc)
+            return;
+        if (units.IsEqualMin())
+        {
+            InstantiatePrefabsParent();
+        }
+        Debug.Log("bowman recruted!");
+        gold -= neededSources;
+        huds.UpdateGoldText(gold.ToString());
+        GameObject ngo = Instantiate(testRecruit);
+        UNITS.Add(ngo);
+        CheckArmy();
     }
 
     public static void RemoveUnit(GameObject go)
     {
-        UNITS.Remove(go);
-        S.units.actual--;
-        if(S.units.IsEqualMin())
+        S.UNITS.Remove(go);
+        S.CheckArmy();
+        if (S.units.IsEqualMin())
         {
-            Destroy(flagGO);
+            S.DestroyPrefabsParent();
         }
+    }
+    
+    public void UpgradeTree()
+    {
+        Debug.Log("TreeUpgraded");
     }
 }
